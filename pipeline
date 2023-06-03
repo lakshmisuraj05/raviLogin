@@ -1,13 +1,13 @@
 pipeline {
     agent any
     triggers{
-        cron('*/1 * * * * ')
-        pollSCM('*/1 * * * * ')
+        cron('*/5 * * * * ')
+        pollSCM('*/5 * * * * ')
     }
     stages{
         stage('clone'){
             steps{
-                git 'https://github.com/Kolla5233/raviLogin.git'
+                git 'https://github.com/lakshmisuraj05/raviLogin.git'
             }
         }
         stage('build'){
