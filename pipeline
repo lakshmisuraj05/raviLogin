@@ -1,8 +1,8 @@
 pipeline {
     agent any
     triggers{
-        cron('*/5 * * * * ')
-        pollSCM('*/5 * * * * ')
+        cron('H/30 9 * * 1 ')
+        pollSCM('H/30 9 * * 1 ')
     }
     stages{
         stage('clone'){
@@ -14,8 +14,8 @@ pipeline {
             steps{
                 sh'mvn package'
             }
-          }
-        }
+         }
+        
         stage('Trigger webhook'){
             steps{
                 sh 'curl -X POST -H "Context-Type: application/json" -d \'{"event" : "build_complete"}\' http://18.208.192.110:8080/github-webhook/'
