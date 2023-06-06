@@ -14,7 +14,7 @@ pipeline {
             steps{
                 sh'mvn package'
             }
-            }
+          }
         }
         stage('Trigger webhook'){
             steps{
@@ -24,5 +24,5 @@ pipeline {
         }
     }
 }    
-} 
-}
+ 
+
